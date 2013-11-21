@@ -75,7 +75,8 @@ public class PostMessageModeBActivity extends Activity {
 	private List<ShopInfo> _shopInfoList = null;
 	private ArrayAdapter<String> _shopAdapter = null;
 	
-
+    
+	
 	
 
 	@Override
@@ -100,6 +101,9 @@ public class PostMessageModeBActivity extends Activity {
 		initData();
 		
 	}
+	
+	
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
