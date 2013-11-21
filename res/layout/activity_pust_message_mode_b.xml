@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qst_backmap"
+    android:orientation="vertical" >
+        
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFF760D"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/postmsg_head"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/qst_btn_back"
+                android:contentDescription="@string/login_image_des"
+                android:onClick="btn_back_onClick" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:scrollbars="vertical" 
+        android:id="@+id/scrollViewTab">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 商铺选择 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shopselector"
+                android:textColor="#FF000000" />
+
+            <Spinner
+                android:id="@+id/addmsg_spinner_shopname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/shopselector" />
+            <!-- 商铺地址 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shopaddress"
+                android:textColor="#FF000000" />
+
+            <EditText
+                android:id="@+id/addmsg_edit_shopaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="text" />
+
+            <!-- 发送日期 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/msgstarttime"
+                android:textColor="#FF000000" />
+
+            <Button
+                android:id="@+id/addmsg_btn_startdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:onClick="btn_startdate_onClick" />
+            
+            <!-- 顾客列表 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/customerlist"
+                android:textColor="#FF000000" />
+            
+            
+            <EditText
+	            android:id="@+id/customer_choosing_editbox"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight = "15px"
+	            android:layout_marginLeft = "15px"
+	            android:onClick="customer_choose_OnClick"
+	            android:editable="false"
+	            android:focusable="false" />
+
+
+     
+     <!-- 信息标题 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/msgtitle"
+                android:textColor="#FF000000" />
+
+            <EditText
+                android:id="@+id/addmsg_edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/msgtitlehint" />
+            <!-- 发送结束时间 -->
+            <!--
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/msgendtime"
+                android:textColor="#FF000000" />
+
+            <EditText
+                android:id="@+id/addmsg_edit_enddate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="date" />
+           
+            发送条数  需求变更,先隐藏
+			 <TextView 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textColor="#FF000000"
+		        android:text="@string/msgsendcount"/>
+		    <EditText
+		        android:id="@+id/addmsg_edit_msgcount"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:inputType="number"
+		        android:singleLine="true"
+		        android:hint="@string/msgsendcounthint"/>
+            -->
+
+
+            <!-- 信息内容 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/msgcontent"
+                android:textColor="#FF000000" />
+
+            <EditText
+                android:id="@+id/addmsg_edit_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/msgcontenthint"
+                android:maxLength="70"
+                android:singleLine="false" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="110dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_click"
+                    android:onClick="btn_clear_onClick"
+                    android:text="@string/clear"
+                    android:textColor="#FFFFFFFF" />
+
+                <Button
+                    android:layout_width="110dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/button_click"
+                    android:onClick="btn_submit_onClick"
+                    android:text="@string/submit"
+                    android:textColor="#FFFFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

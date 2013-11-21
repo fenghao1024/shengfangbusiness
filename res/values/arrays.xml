@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="main_act_list_head_strings">        
+        <item>常用</item>
+        <item>钱包</item>
+    </string-array>
+    <string-array name="main_act_list_item_favorite_strings">
+        <item>首页</item>
+        <item>个人信息</item>
+        <item>商铺信息</item>
+        <item>信息发送</item>
+        <item>视频监控</item>         
+    </string-array>
+    <string-array name="main_act_list_item_action_strings">       
+        <item>余额查询</item>
+        <item>套餐购买</item>
+    </string-array>
+</resources>

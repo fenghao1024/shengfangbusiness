@@ -1,0 +1,14 @@
+login:
+{"address":"","count":0,"id":0,"login_name":"","login_password":null,"money":0.00,"phoneyzm":null,"roleid":null,"sex":"","userid":"","username":"","zctime":null}
+
+SPInfoList:
+[{"address":"笑笑笑","datatime":null,"description":"","id":3,"is_indable":0,"phone":"123456789","spare1":null,"spare2":null,"spimg":"\/UploadImages\/JYXKZ\/1380012438234.png","spname":"羊城西饼","sqid":"e255af8f7a5d458aaad45649d07ca935","userid":"d6ca932d587e4711ac2e66e840801d6c"},{"address":"门口","datatime":null,"description":"第一个商店","id":4,"is_indable":0,"phone":"18984119434","spare1":null,"spare2":null,"spimg":"\/UploadImages\/JYXKZ\/1381214427616.jpg","spname":"新添第一烤","sqid":"4e50687c8b95498bb73c97663a9b94d0","userid":"d6ca932d587e4711ac2e66e840801d6c"},{"address":"恒丰","datatime":null,"description":"1111","id":5,"is_indable":0,"phone":"123456","spare1":null,"spare2":null,"spimg":"\/UploadImages\/JYXKZ\/1381215300316.jpg","spname":"七匹狼","sqid":"4e50687c8b95498bb73c97663a9b94d0","userid":"d6ca932d587e4711ac2e66e840801d6c"}]
+
+MessageList:
+{"allcount":2,"count":2,"list":[{"begin_time":"2013\/10\/8 9:00:00","datetime":"2013\/10\/8 16:22:21","end_time":"2013\/10\/8 18:00:00","home":"咯哎呀","id":15,"is_send":0,"returncount":0,"sendcount":200,"spare1":null,"spare2":null,"spid":3,"spname":null,"sqid":null,"title":"爸妈咪咪头","userid":null},{"begin_time":"2013\/10\/8 9:00:00","datetime":"2013\/10\/8 16:30:15","end_time":"2013\/10\/8 18:00:00","home":"新鲜的时候回来","id":16,"is_send":0,"returncount":0,"sendcount":500,"spare1":null,"spare2":null,"spid":4,"spname":null,"sqid":null,"title":"12356","userid":null}]}
+
+
+[{"count":1,"id":2,"is_show":0,"money":800,"name":"主商圈B套餐（周末）","spare1":null,"spare2":null},{"count":1,"id":3,"is_show":0,"money":1200,"name":"主商圈C套餐（节假日）","spare1":null,"spare2":null},{"count":1,"id":4,"is_show":0,"money":300,"name":"次商圈A套餐（周一到周五）","spare1":null,"spare2":null},{"count":1,"id":5,"is_show":0,"money":500,"name":"次商圈B套餐（周末）","spare1":null,"spare2":null},{"count":1,"id":6,"is_show":0,"money":800,"name":"次商圈C套餐（节假日）","spare1":null,"spare2":null},{"count":1,"id":7,"is_show":0,"money":500,"name":"主商圈A套餐（周一至周五）","spare1":null,"spare2":null}]
+
+
+[{"datetime":"2013-10-01","id":2,"name":"国庆节"},{"datetime":"2013-10-02","id":3,"name":"国庆节"}]

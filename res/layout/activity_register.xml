@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qst_backmap"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="#FFFF760D"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="20dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="left|center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/register_head"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+		</RelativeLayout>
+		<RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:onClick="btn_back_onClick"
+            android:contentDescription="@string/login_image_des"
+            android:background="@drawable/qst_btn_back" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4DFFFFFF"
+            android:orientation="vertical" >
+
+            <!-- 帐号 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_phone"
+                android:textColor="#FFFFFFFF" />
+
+            <EditText
+                android:id="@+id/register_edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_phonehint"
+                android:inputType="phone" />
+            <!-- 密码 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_pwd"
+                android:textColor="#FFFFFFFF" />
+
+            <EditText
+                android:id="@+id/register_edit_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+            <!-- 密码验证 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_reppwd"
+                android:textColor="#FFFFFFFF" />
+
+            <EditText
+                android:id="@+id/register_edit_reppwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+            <!-- 姓名 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_name"
+                android:textColor="#FFFFFFFF" />
+
+            <EditText
+                android:id="@+id/register_edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_namehint" />
+            <!-- 性别 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_sex"
+                android:textColor="#FFFFFFFF" />
+
+            <RadioGroup
+                android:id="@+id/register_radiogroup_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/register_radiogroup_man"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/sex_man" />
+
+                <RadioButton
+                    android:id="@+id/register_radiogroup_woman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sex_woman" />
+            </RadioGroup>
+            <!-- 地址 -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_address"
+                android:textColor="#FFFFFFFF" />
+
+            <EditText
+                android:id="@+id/register_edit_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_addresshint" />
+
+            <Button
+                android:id="@+id/register_btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:onClick="btn_submit_OnClick"
+                android:textColor="#FFFFFFFF"
+                android:text="@string/submit" 
+                android:background="@drawable/button_click"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

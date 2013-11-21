@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qst_backmap"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFF760D"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/personalinfo_head"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/qst_btn_back"
+                android:contentDescription="@string/login_image_des"
+                android:onClick="btn_back_onClick" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/qst_backmap"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:id="@+id/personal_info_act_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/personal_info_login_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <ImageView
+                    android:id="@+id/personal_info_face"
+                    android:layout_width="68.0dip"
+                    android:layout_height="68.0dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="63.0dip"
+                    android:background="@drawable/qst_logo"
+                    android:contentDescription="@string/login_image_des"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/qst_logo" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/personal_info_details_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/personal_info_login_layout" >
+
+                <RelativeLayout
+                    android:id="@+id/personal_info_details_personal_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="15.0dip"
+                    android:background="@drawable/login_input" >
+
+                    <TextView
+                        android:id="@+id/personal_info_username_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16.0dip"
+                        android:singleLine="true"
+                        android:text="@string/account"
+                        android:textColor="#bb000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/personal_info_account"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45.0dip"
+                        android:layout_alignParentTop="true"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:maxLines="1"
+                        android:paddingLeft="67.0dip"
+                        android:paddingRight="10.0dip"
+                        android:singleLine="true"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0px"
+                        android:layout_below="@+id/personal_info_account"
+                        android:layout_marginLeft="1.0px"
+                        android:layout_marginRight="1.0px"
+                        android:background="#ffd9d9d9" />
+
+                    <TextView
+                        android:id="@+id/personal_info_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/line2"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16.0dip"
+                        android:singleLine="true"
+                        android:text="@string/username"
+                        android:textColor="#bb000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/personal_info_name"
+                        style="\@style/login_Font"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45.0dip"
+                        android:layout_below="@+id/line2"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:maxLines="1"
+                        android:paddingLeft="67.0dip"
+                        android:paddingRight="10.0dip"
+                        android:singleLine="true"
+                        android:textColor="#ff333333" />
+
+                    <View
+                        android:id="@+id/line3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0px"
+                        android:layout_below="@+id/personal_info_name"
+                        android:layout_marginLeft="1.0px"
+                        android:layout_marginRight="1.0px"
+                        android:background="#ffd9d9d9" />
+
+
+
+                    <TextView
+                        android:id="@+id/personal_info_address_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/line3"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16.0dip"
+                        android:singleLine="true"
+                        android:text="@string/address"
+                        android:textColor="#bb000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/personal_info_address"
+                        style="\@style/login_Font"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/line3"
+                        android:layout_marginTop="3dp"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:minHeight="45.0dip"
+                        android:paddingLeft="67.0dip"
+                        android:paddingRight="10.0dip"
+                        android:textColor="#ff333333" />
+
+                    <View
+                        android:id="@+id/line5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0px"
+                        android:layout_below="@+id/personal_info_address"
+                        android:layout_marginLeft="1.0px"
+                        android:layout_marginRight="1.0px"
+                        android:background="#ffd9d9d9" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/line5"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16.0dip"
+                        android:singleLine="true"
+                        android:text="@string/msgcount"
+                        android:textColor="#bb000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/personal_info_msgcount"
+                        style="\@style/login_Font"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45.0dip"
+                        android:layout_below="@+id/line5"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:paddingLeft="67.0dip"
+                        android:paddingRight="10.0dip"
+                        android:textColor="#ff333333" />
+
+                    <View
+                        android:id="@+id/line6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0px"
+                        android:layout_below="@+id/personal_info_msgcount"
+                        android:layout_marginLeft="1.0px"
+                        android:layout_marginRight="1.0px"
+                        android:background="#ffd9d9d9" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/line6"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16.0dip"
+                        android:singleLine="true"
+                        android:text="@string/money"
+                        android:textColor="#bb000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/personal_info_money"
+                        style="\@style/login_Font"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45.0dip"
+                        android:layout_below="@+id/line6"
+                        android:background="@null"
+                        android:gravity="center_vertical|right"
+                        android:paddingLeft="67.0dip"
+                        android:paddingRight="10.0dip"
+                        android:textColor="#ff333333" />
+                    
+                    <View
+                        android:id="@+id/line7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0px"
+                        android:layout_below="@+id/personal_info_money"
+                        android:layout_marginLeft="1.0px"
+                        android:layout_marginRight="1.0px"
+                        android:background="#ffd9d9d9" />
+                    
+                    <Button
+                        android:id="@+id/recharge_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="45.0dip"
+                        android:layout_below="@id/line7"
+
+                        android:text="@string/btntext_recharge"
+                        android:background="@drawable/button_click"
+
+                        android:textSize="15sp" 
+                        android:onClick="btn_recharge_onclick"
+                        >
+                        
+                    </Button>
+                        
+                 </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

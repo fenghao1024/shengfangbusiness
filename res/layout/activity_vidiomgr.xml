@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vidiomgr_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <SurfaceView
+        android:id="@+id/vidiomgr_video_main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+    <ProgressBar
+        android:id="@+id/vidiomgr_progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/vidiomgr_left_layout"
+        android:layout_width="150dp"
+        android:layout_height="fill_parent"
+        android:background="#22000000"
+        android:gravity="left|center_vertical"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/vidiomgr_text_playtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#aaddff"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"/>
+
+        <ListView
+            android:id="@+id/vidiomgr_listview_titlelist"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#00000000"
+            android:layout_below="@+id/vidiomgr_text_playtitle"
+            android:layout_marginBottom="50dp"
+            android:scrollbars="none"
+             >
+        </ListView>
+        <RelativeLayout
+            android:id="@+id/vidiomgr_left_control_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="#44000000" 
+            android:layout_below="@+id/vidiomgr_listview_titlelist"
+            android:layout_marginTop="-50dp"
+            android:layout_alignParentBottom="true">
+            <ImageView
+                android:id="@+id/vidiomgr_image_stop"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/login_image_des"
+                android:src="@drawable/close"
+                android:layout_centerInParent="true"
+                android:onClick="image_stop_onClick"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

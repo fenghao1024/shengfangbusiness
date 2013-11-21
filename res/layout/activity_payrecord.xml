@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qst_backmap"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFF760D"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/payrecord_head"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/qst_btn_back"
+                android:contentDescription="@string/login_image_des"
+                android:onClick="btn_back_onClick" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#5DFFFFFF"
+        android:baselineAligned="false"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal"
+                    android:text="@string/setmeal"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_weight="0.3"
+                    android:gravity="center_horizontal"
+                    android:text="@string/price"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_weight="0.2"
+                    android:gravity="center_horizontal"
+                    android:text="@string/pay_date"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"            
+            android:layout_weight="1" 
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <TableLayout
+                android:id="@+id/payrecord_table_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

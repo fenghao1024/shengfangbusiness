@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/qst_welcome"
+    android:orientation="vertical" 
+    android:id="@+id/welcome_viewpager_layout_src">
+
+    <Button
+        android:id="@+id/welcome_viewpager_btn_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:background="#44FFFFFF"
+        android:text="立即体验"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        android:textSize="15sp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentBottom="true"
+    	android:layout_marginBottom="100dp"
+    	android:gravity="center_horizontal"
+    	android:orientation="horizontal" >
+         <ImageView 
+	        android:id="@+id/welcome_viewpager_image_1"
+			android:layout_height="20dp"
+			android:layout_width="20dp"
+			android:background="@drawable/guide_normal"
+			android:contentDescription="@string/login_image_des"/>
+          <ImageView 
+	        android:id="@+id/welcome_viewpager_image_2"
+			android:layout_height="20dp"
+			android:layout_width="20dp"
+			android:background="@drawable/guide_normal"
+			android:contentDescription="@string/login_image_des"/>
+           <ImageView 
+	        android:id="@+id/welcome_viewpager_image_3"
+			android:layout_height="20dp"
+			android:layout_width="20dp"
+			android:background="@drawable/guide_normal"
+			android:contentDescription="@string/login_image_des"/>
+    
+    </LinearLayout>
+   
+</RelativeLayout>
