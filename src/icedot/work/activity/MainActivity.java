@@ -186,7 +186,7 @@ public class MainActivity extends Activity
 			startActivity(intent);
 		}
 			break;				
-		case View_Selector.Vidio:
+		case View_Selector.Video:
 		{
 			Intent intent = new Intent(MainActivity.this,VidioMgrActivity.class);
 			startActivity(intent);
@@ -216,9 +216,9 @@ public class MainActivity extends Activity
 			startActivity(intent);
 		}
 			break;
-		case View_Selector.PayHistory:
+		case View_Selector.Recharge:
 		{
-			Intent intent = new Intent(MainActivity.this,PayRecordActivity.class);
+			Intent intent = new Intent(MainActivity.this,RechargeActivity.class);
 			startActivity(intent);
 		}
 			break;
@@ -328,7 +328,7 @@ public class MainActivity extends Activity
 
 		Map<String, Object> t_map3 = new HashMap<String, Object>();
 		t_map3.put("icon", R.drawable.icon_record);
-		t_map3.put("name", "购买记录");
+		t_map3.put("name", "余额充值");
 		t_map3.put("click", false);
 		top_list2.add(t_map3);
 		

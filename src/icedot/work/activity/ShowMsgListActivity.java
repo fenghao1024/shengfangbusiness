@@ -15,7 +15,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.os.AsyncTask.Status;
+//import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -23,7 +23,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -122,7 +122,7 @@ public class ShowMsgListActivity extends Activity
 //		        int groupCount = _adapter.getGroupCount();
 		        
 		        boolean showHead = false;
-		        boolean showComplete = false;
+		        //boolean showComplete = false;
 		        boolean showRear = false;
 		        
 		        boolean show = false;
@@ -152,7 +152,7 @@ public class ShowMsgListActivity extends Activity
 				
 				if(showHead && showRear)
 				{
-					showComplete = true;
+					//showComplete = true;
 					orentation = GlobleDefault.BACK_ORNT;
 				}
 				
@@ -311,19 +311,19 @@ public class ShowMsgListActivity extends Activity
 			if(result == 10)
 			{
 				downLoadComplete = true;
-				Toast.makeText(getApplicationContext(), "已经显示出完整的记录", 0).show();
+				Toast.makeText(getApplicationContext(), "已经显示出完整的记录", Toast.LENGTH_SHORT).show();
 			}
 			if(result == 11)
 			{
 				showHeadComplete = false;
 				showRearComplete = true;
-				Toast.makeText(getApplicationContext(), "已经显示出最早的记录", 0).show();
+				Toast.makeText(getApplicationContext(), "已经显示出最早的记录", Toast.LENGTH_SHORT).show();
 			}
 			if(result == 12)
 			{
 				showHeadComplete = true;
 				showRearComplete = false;
-				Toast.makeText(getApplicationContext(), "已经显示出最新的记录", 0).show();
+				Toast.makeText(getApplicationContext(), "已经显示出最新的记录", Toast.LENGTH_SHORT).show();
 			}
 
 			initData(orentation);

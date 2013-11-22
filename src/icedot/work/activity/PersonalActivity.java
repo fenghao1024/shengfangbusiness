@@ -5,14 +5,14 @@ import icedot.work.application.ShengFangSoap;
 import icedot.work.common.GlobalData;
 import icedot.work.shengfang.business.R;
 import icedot.work.struct.UserInfo;
-import icedot.work.struct.View_Selector;
+//import icedot.work.struct.View_Selector;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +24,10 @@ public class PersonalActivity extends Activity
 	private TextView _text_userName;
 	//private TextView _text_sex;
 	private TextView _text_address;
-	private TextView _text_msgCount;
+	//private TextView _text_msgCount;
 	private TextView _text_money;
 	
-	private Button btnRecharge;
+	//private Button btnRecharge;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -84,9 +84,9 @@ public class PersonalActivity extends Activity
 		_text_userName = (TextView) findViewById(R.id.personal_info_name);
 		//_text_sex = (TextView) findViewById(R.id.personal_info_sex);
 		_text_address = (TextView) findViewById(R.id.personal_info_address);
-		_text_msgCount = (TextView) findViewById(R.id.personal_info_msgcount);
+		//_text_msgCount = (TextView) findViewById(R.id.personal_info_msgcount);
 		_text_money = (TextView) findViewById(R.id.personal_info_money);
-		btnRecharge = (Button)findViewById(R.id.recharge_btn);
+		//btnRecharge = (Button)findViewById(R.id.recharge_btn);
 	}
 	private void initData() 
 	{
@@ -98,7 +98,7 @@ public class PersonalActivity extends Activity
 			_text_userName.setText(soap.get_userInfo().get_name());
 			//_text_sex.setText(soap.get_userInfo().get_sex());
 			_text_address.setText(soap.get_userInfo().get_address());
-			_text_msgCount.setText(String.valueOf(soap.get_userInfo().get_count()));
+			//_text_msgCount.setText(String.valueOf(soap.get_userInfo().get_count()));
 			_text_money.setText(String.valueOf(soap.get_userInfo().get_money()));
 		}
 		else

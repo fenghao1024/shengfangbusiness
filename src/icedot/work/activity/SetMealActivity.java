@@ -208,7 +208,7 @@ public class SetMealActivity extends Activity
 	{
 		double balance = _app.getSoap().get_userInfo().get_money();
 		balance = balance - _allPrice;
-		String str = "余额:" + String.valueOf(balance) + "元. 总额:"
+		String str = "余额:" + String.valueOf(balance) + "元.  已选套餐总额:"
 				   	 + _allPrice.toString() + "元."; 
 		if(balance > 0)
 		{

@@ -129,6 +129,14 @@ public class RegisterActivity extends Activity
 			return false;
 		}
 		
+		if(_edit_name.getText().toString().length() == 0)
+		{
+			GlobalData.getCustomToast(this, this.getResources().getDrawable(R.drawable.custom_toast_icon),
+					"请再次输入您的姓名", Toast.LENGTH_LONG).show();
+			_edit_name.requestFocus();
+			return false;
+		}
+		
 		if(!_edit_pwd.getText().toString().equals(_edit_repPwd.getText().toString()))
 		{
 			GlobalData.getCustomToast(this, this.getResources().getDrawable(R.drawable.custom_toast_icon),
