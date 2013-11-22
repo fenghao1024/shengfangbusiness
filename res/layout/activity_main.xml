@@ -22,7 +22,7 @@
             android:layout_height="50dip"
             android:scaleType="centerCrop"
             android:contentDescription="@string/login_image_des"
-            android:src="@drawable/qst_logo" />
+            android:src="@drawable/qst_logo_flat" />
 
         <TextView
             android:id="@+id/main_top_name"
@@ -33,12 +33,13 @@
             android:textColor="#FFFFFFFF"
             android:textStyle="bold"
             android:text="@string/app_name"
-            android:textSize="16sp"/>
+            android:textSize="16sp"/> 
         <RelativeLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:layout_gravity="right|center_vertical">
-        <Button 
+<!--         <Button 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -46,7 +47,17 @@
             android:onClick="btn_update_onClick"
             android:text="刷新"
             android:background="#FFFF760C"/>
+             -->
+                     <ImageButton
+            android:id="@+id/refresh_imagebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_refresh"
+            android:contentDescription="@string/login_image_des"
+            android:onClick="btn_update_onClick" />
         </RelativeLayout>
+
     </LinearLayout>
 
     <LinearLayout

@@ -104,7 +104,12 @@
         </activity>
         <activity
             android:name="icedot.work.activity.RechargeActivity"
-            android:label="@string/title_activity_recharge" 
+            android:label="@string/title_activity_recharge"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="icedot.work.activity.UsersSetmealActivity"
+            android:label="@string/title_activity_users_setmeal"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
     </application>

@@ -16,6 +16,7 @@ import icedot.work.common.GlobalData;
 import icedot.work.shengfang.business.R;
 import icedot.work.shengfang.business.R.layout;
 import icedot.work.shengfang.business.R.menu;
+import icedot.work.struct.Meal_Type;
 import icedot.work.struct.MessageInfo;
 import icedot.work.struct.ShopInfo;
 import android.os.Bundle;
@@ -148,6 +149,7 @@ public class PostMessageModeBActivity extends Activity {
 			 public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,  long arg3) 
 			 { 
 				 _edit_shopaddress.setText(_shopInfoList.get(arg2).get_address());
+				 _selectShopID = arg2;
 				 //updateMealInfo();
 			 } 
 			 
@@ -184,22 +186,17 @@ public class PostMessageModeBActivity extends Activity {
 		{
 			if(allShop.get(i).get_check() == 1)
 			{
-				shopNameList.add(allShop.get(i).get_name());
+				String arrayType = Meal_Type.ShoppingDistrict[allShop.get(i).get_areaType()];
+				shopNameList.add(allShop.get(i).get_name() + "(" + arrayType + ")");
 				_shopInfoList.add(allShop.get(i));
-				if(_msgInfo.get_shopID().length() > 0)
-				{
-					if(_shopInfoList.get(i).get_ID() == Integer.valueOf(_msgInfo.get_shopID()))
-					{
-						_selectShopID = shopNameList.size() - 1;						
-					}
-				}
 			}
 		}
+		_selectShopID = 0;
 		if( shopNameList.size() == 0)
 		{
 			GlobalData.getCustomToast(this, 
 					this.getResources().getDrawable(R.drawable.custom_toast_icon),
-					"无商铺通过审核!", Toast.LENGTH_LONG).show();
+					"无通过审核的商铺!", Toast.LENGTH_LONG).show();
 			finish();
 			return ;
 		}
@@ -225,20 +222,14 @@ public class PostMessageModeBActivity extends Activity {
 	{
 		super.onResume();
 		
-		ShengFangApplication context = (ShengFangApplication) getApplicationContext();
-		MyDataCache dc = context.getDataCache();
-		String s = dc.getData();
-		CustomerChooseEditText.setText(s);
-		
+
 	}
 	
 	@Override
 	protected void onPause()
 	{
 		super.onPause();
-		//putMsgInfo();
-		_app.getSoap().set_addMsg(_msgInfo);
-		Log.d("onPause","onPause run");
+
 	}
 	
 	@Override

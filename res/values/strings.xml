@@ -79,5 +79,7 @@
     <string name="title_activity_recharge">余额充值</string>
     <string name="recharge_edittext_msg">请输入您要充值的金额</string>
     <string name="recharge_button_msg">点击按钮转到支付宝充值</string>
-    
+    <string name="title_activity_users_setmeal">剩余套餐</string>
+    <string name="title_users_setmeal">您的套餐</string>
+
 </resources>

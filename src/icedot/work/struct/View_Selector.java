@@ -11,7 +11,8 @@ public class View_Selector
 	//第二组
 	public static final int Personal = 201;		//个人信息
 	public static final int PayMgr = 202;		//套餐购买
-	public static final int PayHistory = 203;	//充值记录
+	public static final int LeftSetmeal = 203;  //剩余套餐
+	public static final int PayHistory = 204;	//充值记录
 	
 	//第三组
 	public static final int App_Share = 301;	//分享

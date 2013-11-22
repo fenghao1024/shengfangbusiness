@@ -4,4 +4,6 @@
     <color name="main_exlistview_child_normal">#00000000</color>
     <color name="button_click_pressed">#FFF9974C</color>
     <color name="button_click_normal">#FFFF760C</color>
+    <color name="exlistgroup_click_pressed">#99ffff</color>
+    <color name="exlistgroup__click_normal">#FFFFFFFF</color>
 </resources>

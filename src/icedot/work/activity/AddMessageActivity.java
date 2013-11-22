@@ -465,6 +465,7 @@ public class AddMessageActivity extends Activity
 				}
 				return ret;
 		 }
+		 
 		 @Override
 		 protected void onPostExecute(Integer result) 
 		 {

@@ -19,6 +19,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ import android.view.Window;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -105,7 +107,7 @@ public class MainActivity extends Activity
 	private void initView() 
 	{
 		_image_headPic = (ImageView) findViewById(R.id.main_top_avatar);
-		_image_headPic.setImageResource(R.drawable.qst_logo);
+		//_image_headPic.setImageResource(R.drawable.qst_logo);
 		_listView_main = (ExpandableListView) findViewById(R.id.main_list);
 		
 		_listView_group = new ArrayList<Map<String, Object>>();
@@ -205,6 +207,12 @@ public class MainActivity extends Activity
 		case View_Selector.PayMgr:
 		{
 			Intent intent = new Intent(MainActivity.this,SetMealActivity.class);
+			startActivity(intent);
+		}
+			break;
+		case View_Selector.LeftSetmeal:
+		{
+			Intent intent = new Intent(MainActivity.this, UsersSetmealActivity.class);
 			startActivity(intent);
 		}
 			break;
@@ -311,6 +319,12 @@ public class MainActivity extends Activity
 		t_map1.put("name", "套餐购买");
 		t_map1.put("click", false);
 		top_list2.add(t_map1);
+		
+		Map<String, Object> t_map2 = new HashMap<String, Object>();
+		t_map2.put("icon", R.drawable.icon_box);
+		t_map2.put("name", "剩余套餐");
+		t_map2.put("click", false);
+		top_list2.add(t_map2);
 
 		Map<String, Object> t_map3 = new HashMap<String, Object>();
 		t_map3.put("icon", R.drawable.icon_record);
@@ -339,6 +353,8 @@ public class MainActivity extends Activity
 	
 	public void btn_update_onClick(View v)
 	{
+		
+
 		if(_taskDlg == null)
 		{
 			_taskDlg = ProgressDialog.show(MainActivity.this, "", "更新数据中. 请稍候...", true);
