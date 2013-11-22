@@ -79,7 +79,7 @@ public class ShopInfoListActivity extends Activity
 		{
 			GlobalData.getCustomToast(this, 
 					this.getResources().getDrawable(R.drawable.custom_toast_icon),
-					"无法商铺信息,请先添加!", Toast.LENGTH_LONG).show();
+					"暂无商铺信息,请先添加!", Toast.LENGTH_LONG).show();
 		}
 		
 		for(int i = 0; i < _shopInfoList.size();i++)

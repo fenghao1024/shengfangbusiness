@@ -44,6 +44,9 @@ public class UsersSetmealActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_users_setmeal);
+		
+		this.initView();
+		this.initData();
 	}
 
 	@Override
@@ -67,6 +70,12 @@ public class UsersSetmealActivity extends Activity {
 	
 	public void initData()
 	{
+
+		initExList();
+	}
+	
+	public void initExList()
+	{
 		setmealNameList = new ArrayList<String>();
 		setmealCountList = new ArrayList<String>();
 		setmealContentList = new ArrayList<List<String>>();
@@ -74,28 +83,31 @@ public class UsersSetmealActivity extends Activity {
 		app = (ShengFangApplication)this.getApplication();
 		soap = app.getSoap();
 		
-		task = new UpdateSetmealTask();
-		task.execute();
+
 		
-		if(task.getStatus() == Status.RUNNING)
-		{
-			if(dialog == null)
-			{
-				dialog = ProgressDialog.show(UsersSetmealActivity.this, "", "Loading...");
-			}
-			else
-			{
-				dialog.show();
-			}
-		}
+
+		List<SetMealInfo> setmealInfoList = soap.get_mealInfoList();
+		List<SetMealInfo> userSetmealList = soap.get_userMealInfoList();
 		
-		List<SetMealInfo> setmealInfoList = soap.get_mealInfoList(); 
 		for(int i = 0; i < setmealInfoList.size(); i++)
 		{
 			setmealNameList.add(setmealInfoList.get(i).get_type());
-			setmealCountList.add(String.valueOf(setmealInfoList.get(i).get_count()));
+			
+			int count = 0;
+			for(int  j = 0; j < userSetmealList.size(); j++)
+			{
+				if(setmealInfoList.get(i).get_ID() == userSetmealList.get(j).get_ID())
+				{
+					count = userSetmealList.get(j).get_count();
+				}
+			}
+			
+			setmealCountList.add(String.valueOf(count));
 		}
 		
+		SetmealExpListAdapter adapter = new SetmealExpListAdapter(UsersSetmealActivity.this);
+		exListView.setAdapter(adapter);
+		adapter.notifyDataSetChanged();
 	}
 	
 	
@@ -215,14 +227,7 @@ public class UsersSetmealActivity extends Activity {
 			@Override
 			public boolean isChildSelectable(int groupPosition, int childPosition) {
 				return true;
-			}
-			
-
-			
-			public void ExpListView_HeightChange()
-			{
-
-			}			
+			}		
 	    	
 	    }
 	 
@@ -245,7 +250,7 @@ public class UsersSetmealActivity extends Activity {
 			int ret = 0;
 			try
 			{
-				ret = soap.setmealListSoap(); 
+
 				return ret;
 			}
 			catch (Exception e)
@@ -259,10 +264,8 @@ public class UsersSetmealActivity extends Activity {
 		@Override
 		protected void onPostExecute(Integer result) 
 		{
-			if(dialog != null && dialog.isShowing())
-			{
-				dialog.dismiss();
-			}
+			
+
 		}
 	}
 	

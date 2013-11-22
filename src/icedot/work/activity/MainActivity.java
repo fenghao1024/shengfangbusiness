@@ -299,7 +299,7 @@ public class MainActivity extends Activity
 		top_list1.add(c_map4);
 		
 		Map<String, Object> c_map5 = new HashMap<String, Object>();
-		c_map5.put("icon", R.drawable.icon_msg);
+		c_map5.put("icon", R.drawable.icon_record);
 		c_map5.put("name", "历史信息");
 		c_map5.put("click", false);
 		top_list1.add(c_map5);
@@ -327,7 +327,7 @@ public class MainActivity extends Activity
 		top_list2.add(t_map2);
 
 		Map<String, Object> t_map3 = new HashMap<String, Object>();
-		t_map3.put("icon", R.drawable.icon_record);
+		t_map3.put("icon", R.drawable.icon_recharge);
 		t_map3.put("name", "余额充值");
 		t_map3.put("click", false);
 		top_list2.add(t_map3);
