@@ -4,21 +4,16 @@ import icedot.work.application.ShengFangApplication;
 import icedot.work.application.ShengFangSoap;
 import icedot.work.common.GlobalData;
 import icedot.work.shengfang.business.R;
+import icedot.work.struct.GlobleDefault;
 import icedot.work.struct.Meal_Type;
 import icedot.work.struct.MessageInfo;
 import icedot.work.struct.SetMealInfo;
 import icedot.work.struct.ShopInfo;
-import icedot.work.struct.UserInfo;
-import icedot.work.struct.View_Selector;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;
 
 import com.alipay.android.MobileSecurePayHelper;
 
@@ -160,6 +155,14 @@ public class AddMessageActivity extends Activity
 			mYear = year;
 			mMonth = monthOfYear + 1;
 			mDay = dayOfMonth;
+			
+			if(!checkDate(mYear, mMonth, mDay))
+			{
+				Calendar cal = Calendar.getInstance();
+				mYear = cal.get(Calendar.YEAR);
+				mMonth = cal.get(Calendar.MONTH) + 1;
+				mDay = cal.get(Calendar.DAY_OF_MONTH);
+			}
 			  
 			_btn_startTime.setText(getNowDate());  
 			
@@ -403,6 +406,53 @@ public class AddMessageActivity extends Activity
 //		}
 		return true;
 	}
+	private boolean checkDate(int year, int month, int day)
+	{
+		boolean ret = false;
+		
+		Calendar cal = Calendar.getInstance();
+		int _year = cal.get(Calendar.YEAR);
+		int _month = cal.get(Calendar.MONTH) + 1;
+		int _day = cal.get(Calendar.DAY_OF_MONTH);
+		
+		if(year < _year)
+		{
+			ret = false;
+		}
+		else
+		{
+			if(year == _year)
+			{
+				if(month < _month)
+				{
+					ret = false;
+				}
+				else
+				{
+					if(month == _month)
+					{
+						if(day < _day)
+						{
+							ret = false;
+						}
+						else
+						{
+							ret = true;
+						}
+					}
+					else
+					{
+						ret = true;
+					}
+				}
+			}
+			else
+			{
+				ret = true;
+			}
+		}
+		return ret;
+	}
 	private String getNowDate()
 	{		
 		String theDate = String.valueOf(mYear);
@@ -469,49 +519,58 @@ public class AddMessageActivity extends Activity
 		 @Override
 		 protected void onPostExecute(Integer result) 
 		 {
-			 switch(result)
-				{
-				case -1:
-					GlobalData.getCustomToast(AddMessageActivity.this,
-							AddMessageActivity.this.getResources().
-							getDrawable(R.drawable.custom_toast_icon), 
-							"内部错误,请与管理员联系!", Toast.LENGTH_LONG).show();
-					break;
-				case -2:
-					GlobalData.getCustomToast(AddMessageActivity.this,
-							AddMessageActivity.this.getResources().
-							getDrawable(R.drawable.custom_toast_icon), 
-							"无法连接服务器!", Toast.LENGTH_LONG).show();
-					break;
-				case 0:
-					GlobalData.getCustomToast(AddMessageActivity.this,
-							AddMessageActivity.this.getResources().
-							getDrawable(R.drawable.custom_toast_icon), 
-							"商铺信息重复，添加失败！", Toast.LENGTH_LONG).show();
-					break;
-				case 1:
-					GlobalData.getCustomToast(AddMessageActivity.this,
-							AddMessageActivity.this.getResources().
-							getDrawable(R.drawable.custom_toast_icon), 
-							"添加信息不完整，添加失败！", Toast.LENGTH_LONG).show();
-					break;
-				case 2:
-					GlobalData.getCustomToast(AddMessageActivity.this,
-							AddMessageActivity.this.getResources().
-							getDrawable(R.drawable.smile), 
-							"信息添加成功", Toast.LENGTH_LONG).show();
-					AddMessageActivity.this.finish();
-					break;
-				case 3:
-					GlobalData.getCustomToast(AddMessageActivity.this,
-							AddMessageActivity.this.getResources().
-							getDrawable(R.drawable.custom_toast_icon), 
-							"信息添加失败！", Toast.LENGTH_LONG).show();
-					break;
-				default:
-					break;
-				}
-				super.onPostExecute(result);
+			 String xString = GlobleDefault.getMsgSendedResult(result);
+			 
+			 GlobalData.getCustomToast(AddMessageActivity.this,
+						AddMessageActivity.this.getResources().
+						getDrawable(R.drawable.custom_toast_icon), 
+						xString, Toast.LENGTH_LONG).show();
+			 super.onPostExecute(result);
+			 return;
+			 
+//			 switch(result)
+//				{
+//				case -1:
+//					GlobalData.getCustomToast(AddMessageActivity.this,
+//							AddMessageActivity.this.getResources().
+//							getDrawable(R.drawable.custom_toast_icon), 
+//							"内部错误,请与管理员联系!", Toast.LENGTH_LONG).show();
+//					break;
+//				case -2:
+//					GlobalData.getCustomToast(AddMessageActivity.this,
+//							AddMessageActivity.this.getResources().
+//							getDrawable(R.drawable.custom_toast_icon), 
+//							"无法连接服务器!", Toast.LENGTH_LONG).show();
+//					break;
+//				case 0:
+//					GlobalData.getCustomToast(AddMessageActivity.this,
+//							AddMessageActivity.this.getResources().
+//							getDrawable(R.drawable.custom_toast_icon), 
+//							"商铺信息重复，添加失败！", Toast.LENGTH_LONG).show();
+//					break;
+//				case 1:
+//					GlobalData.getCustomToast(AddMessageActivity.this,
+//							AddMessageActivity.this.getResources().
+//							getDrawable(R.drawable.custom_toast_icon), 
+//							"添加信息不完整，添加失败！", Toast.LENGTH_LONG).show();
+//					break;
+//				case 2:
+//					GlobalData.getCustomToast(AddMessageActivity.this,
+//							AddMessageActivity.this.getResources().
+//							getDrawable(R.drawable.smile), 
+//							"信息添加成功", Toast.LENGTH_LONG).show();
+//					AddMessageActivity.this.finish();
+//					break;
+//				case 3:
+//					GlobalData.getCustomToast(AddMessageActivity.this,
+//							AddMessageActivity.this.getResources().
+//							getDrawable(R.drawable.custom_toast_icon), 
+//							"信息添加失败！", Toast.LENGTH_LONG).show();
+//					break;
+//				default:
+//					break;
+//				}
+				
 		 }
 	 }
 }

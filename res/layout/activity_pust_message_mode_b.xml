@@ -93,21 +93,89 @@
                 android:inputType="text" />
 
             <!-- 发送日期 -->
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/msgstarttime"
-                android:textColor="#FF000000" />
-
-            <Button
-                android:id="@+id/addmsg_btn_startdate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left|center_vertical"
-                android:onClick="btn_startdate_onClick" />
             
-            <!-- 顾客列表 -->
+           <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                >
+            
+		            <LinearLayout 
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:orientation="vertical"
+		                
+		                android:layout_gravity="left"
+		                >
+		
+			            <TextView
+			                android:layout_width="match_parent"
+			                android:layout_height="wrap_content"
+			                android:text="@string/start_date"
+			                android:textColor="#FF000000" />
+			
+			            <Button
+			                android:id="@+id/addmsg_btn_startdate"
+			                android:layout_width="match_parent"
+			                android:layout_height="wrap_content"
+			                android:gravity="left|center_vertical"
+			                android:onClick="btn_startdate_onClick" />
+			            
+			            <TextView
+			                android:layout_width="match_parent"
+			                android:layout_height="wrap_content"
+			                android:text="@string/start_time"
+			                android:textColor="#FF000000" />
+			
+			            <Button
+			                android:id="@+id/addmsg_btn_starttime"
+			                android:layout_width="match_parent"
+			                android:layout_height="wrap_content"
+			                android:gravity="left|center_vertical"
+			                android:onClick="btn_startTime_onClick" />
+		            
+		            </LinearLayout>
+		            
+		            <!-- 
+		            <LinearLayout 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:orientation="vertical"
+		                android:layout_marginLeft="10dp"
+		                android:layout_gravity="right"
+		               	>
+			            	<TextView
+				                android:layout_width="match_parent"
+				                android:layout_height="wrap_content"
+			                	android:text="@string/end_date"
+				                android:textColor="#FF000000" />
+			
+			            	<Button
+				                android:id="@+id/addmsg_btn_enddate"
+				                android:layout_width="match_parent"
+				                android:layout_height="wrap_content"
+				                android:gravity="left|center_vertical"
+				                android:onClick="btn_enddate_onClick" />
+		                
+				            <TextView
+				                android:layout_width="match_parent"
+				                android:layout_height="wrap_content"
+			                	android:text="@string/end_time"
+				                android:textColor="#FF000000" />
+				
+				            <Button
+				                android:id="@+id/addmsg_btn_endtime"
+				                android:layout_width="match_parent"
+				                android:layout_height="wrap_content"
+				                android:gravity="left|center_vertical"
+				                android:onClick="btn_endTime_onClick" />
+		            
+		            
+		            </LinearLayout>
+		     -->
+		    </LinearLayout>
+            <!-- 顾客列表 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +192,7 @@
 	            android:onClick="customer_choose_OnClick"
 	            android:editable="false"
 	            android:focusable="false" />
-
+-->
 
      
      <!-- 信息标题 -->

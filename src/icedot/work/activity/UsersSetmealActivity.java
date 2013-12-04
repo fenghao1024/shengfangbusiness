@@ -3,28 +3,30 @@ package icedot.work.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import icedot.work.activity.CustomerChoosingActivity.ViewHolder;
+//import icedot.work.activity.CustomerChoosingActivity.ViewHolder;
 import icedot.work.application.ShengFangApplication;
 import icedot.work.application.ShengFangSoap;
 import icedot.work.shengfang.business.R;
+import icedot.work.struct.Meal_Type;
 import icedot.work.struct.SetMealInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.AsyncTask.Status;
+//import android.os.AsyncTask.Status;
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
+//import android.view.View.OnClickListener;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.CheckBox;
+//import android.widget.CheckBox;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
+import android.widget.ExpandableListView.OnGroupClickListener;
 
 public class UsersSetmealActivity extends Activity {
 	
@@ -89,25 +91,58 @@ public class UsersSetmealActivity extends Activity {
 		List<SetMealInfo> setmealInfoList = soap.get_mealInfoList();
 		List<SetMealInfo> userSetmealList = soap.get_userMealInfoList();
 		
+		setmealNameList.add("套餐名称");
+		setmealCountList.add("剩余量");
+		
 		for(int i = 0; i < setmealInfoList.size(); i++)
 		{
-			setmealNameList.add(setmealInfoList.get(i).get_type());
+			
+			if(setmealInfoList.get(i).get_ID() == Meal_Type.GROUP_SMS)
+			{
+				setmealNameList.add("短信群发");
+			}
+			else
+			{
+				setmealNameList.add(setmealInfoList.get(i).get_type());
+			}
+			
 			
 			int count = 0;
 			for(int  j = 0; j < userSetmealList.size(); j++)
 			{
 				if(setmealInfoList.get(i).get_ID() == userSetmealList.get(j).get_ID())
 				{
-					count = userSetmealList.get(j).get_count();
+					if(setmealInfoList.get(i).get_ID() == Meal_Type.GROUP_SMS)
+					{
+						count = soap.get_userInfo().get_count();
+					}
+					else
+					{
+						count = userSetmealList.get(j).get_count();
+					}
+					
 				}
 			}
 			
 			setmealCountList.add(String.valueOf(count));
 		}
 		
+		exListView.setOnGroupClickListener(new OnGroupClickListener() 
+		{			
+			//避免组折叠
+			@Override
+			public boolean onGroupClick(ExpandableListView parent, View v,
+					int groupPosition, long id) 
+			{
+				return true;
+			}
+		});
+		
 		SetmealExpListAdapter adapter = new SetmealExpListAdapter(UsersSetmealActivity.this);
 		exListView.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
+		
+		
 	}
 	
 	

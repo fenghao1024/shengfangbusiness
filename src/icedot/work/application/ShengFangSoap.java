@@ -26,7 +26,7 @@ import android.util.Log;
 public class ShengFangSoap {
 	
 	private static final String s_wsdlUrl = "http://219.151.10.235:8023/Service/Service1.svc?wsdl";
-	//private static final String s_wsdlUrl = "http://192.168.1.55:8017/Service1.svc?wsdl";
+	//private static final String s_wsdlUrl = "http://192.168.1.55/servicer/Service1.svc?wsdl";
     
 	private static final String s_namesapce="http://tempuri.org/";
 	
@@ -859,6 +859,62 @@ public class ShengFangSoap {
 	         return -2;
 		}
 	}
+	
+	//群发
+	public int messageGroupSending(String shopId, String title, String content, String beginTime, String endTime)
+	{
+		if(_userInfo.get_ID().length() == 0)
+		{
+			clearData();
+			return -3;
+		}
+		
+		String funcName = "VIPMessageGo";
+		SoapObject request = new SoapObject(s_namesapce, funcName);
+		
+		request.addProperty("userid", _userInfo.get_ID());
+		request.addProperty("spid", shopId);
+		request.addProperty("title", title);
+		request.addProperty("home", content);
+		request.addProperty("begin_time", beginTime);
+		request.addProperty("end_time", endTime);
+		
+		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+		envelope.bodyOut = request;
+		envelope.dotNet = true;
+		HttpTransportSE ht = new HttpTransportSE(s_wsdlUrl);
+		
+		try 
+		{
+			String callStr = "http://tempuri.org/IService1/" + funcName;
+			ht.call(callStr,envelope);
+			if (envelope.getResponse() != null)
+            {
+				String result = envelope.getResponse().toString();
+				int ret = Integer.valueOf(result);
+				if(ret == 0)
+				{ 
+					getUserSetMeal();
+					updateUserInfo_InSoap();
+					//this.loginSoap(_appConfig.get_username(), _appConfig.getPassword());
+				}
+				return ret;
+            }
+			else
+            {
+            	return -1;
+            }
+		} 
+		catch (Exception e) 
+		{
+			 Log.d("ShengFangSoap", "Soap Exception" + e.getMessage());
+	         e.printStackTrace();
+	         return -2;
+		}
+	}
+
+
+	
 	
 	public int buySetmeal_inSoap(String[] strOrder, String strTotalPrice)
 	{

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="icedot.work.shengfang.business"
-    android:versionCode="11"
-    android:versionName="周四紧急修补版" >
+    android:versionCode="13"
+    android:versionName="正宗发布版" >
 
     <uses-sdk
         android:minSdkVersion="7"
